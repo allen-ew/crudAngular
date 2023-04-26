@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Persona } from '../models/Persona';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaService {
 
-  varRutaGlobal = 'https://localhost:8080/persona/';
+  varRutaGlobal = 'http://localhost:8080/persona/';
 
   constructor(private http: HttpClient) { }
 
@@ -19,8 +20,8 @@ export class PersonaService {
   }
   //Read a Persona
 
-  getPersonas(){
-    return this.http.get<Persona[]>(this.varRutaGlobal + 'mostar');
+  getPersonas():Observable<Persona[]>{
+    return this.http.get<Persona[]>(this.varRutaGlobal + 'mostrar')
   }
 
 
