@@ -1,7 +1,7 @@
 export class Persona{
 
-    atrNumDocumento ?: number;
-    atrNombre ?: string;
-    atrApellido ?: string;
-    atrEmail ?: string;
+    numDocumento ?: number;
+    nombre ?: string;
+    apellido ?: string;
+    email ?: string;
 }

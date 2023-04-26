@@ -12,14 +12,13 @@ export class BodyComponent implements OnInit {
 
   personas: Array<Persona>
   formularioPersona : FormGroup
-
   constructor(private fb: FormBuilder, private pService: PersonaService) { 
     this.personas = new Array<Persona>();
     this.formularioPersona =fb.group({
-      atrNumDocumento: new FormControl('',[Validators.required]),
-      atrNombre: new FormControl('',[Validators.required]),
-      atrApellido: new FormControl('',[Validators.required]),
-      atrEmail: new FormControl('',[Validators.required])
+      numDocumento: new FormControl('',[Validators.required]),
+      nombre: new FormControl('',[Validators.required]),
+      apellido: new FormControl('',[Validators.required]),
+      email: new FormControl('',[Validators.required])
     })
   }
 
@@ -28,10 +27,10 @@ export class BodyComponent implements OnInit {
   enviarDatos(){
     if(this.formularioPersona.valid){
       let person = new Persona()
-      person.atrNumDocumento = this.formularioPersona.get('atrNumDocumento')?.value
-      person.atrNombre = this.formularioPersona.get('atrNombre')?.value
-      person.atrApellido = this.formularioPersona.get('atrApellido')?.value
-      person.atrEmail = this.formularioPersona.get('atrEmail')?.value
+      person.numDocumento = this.formularioPersona.get('numDocumento')?.value
+      person.nombre = this.formularioPersona.get('nombre')?.value
+      person.apellido = this.formularioPersona.get('apellido')?.value
+      person.email = this.formularioPersona.get('email')?.value
       this.pService.setPersonas(person).subscribe(res =>{
         this.getPersonas()
         this.formularioPersona.reset()

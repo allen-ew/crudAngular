@@ -7,7 +7,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 })
 export class PersonaService {
 
-  varRutaGlobal = 'https://localhost:8080/persona';
+  varRutaGlobal = 'https://localhost:8080/persona/';
 
   constructor(private http: HttpClient) { }
 
