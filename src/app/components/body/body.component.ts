@@ -18,7 +18,7 @@ export class BodyComponent implements OnInit {
       numDocumento: new FormControl('',[Validators.required]),
       nombre: new FormControl('',[Validators.required]),
       apellido: new FormControl('',[Validators.required]),
-      email: new FormControl('',[Validators.required])
+      correoElectronico: new FormControl('',[Validators.required])
     })
   }
 
@@ -30,7 +30,7 @@ export class BodyComponent implements OnInit {
       person.numDocumento = this.formularioPersona.get('numDocumento')?.value
       person.nombre = this.formularioPersona.get('nombre')?.value
       person.apellido = this.formularioPersona.get('apellido')?.value
-      person.email = this.formularioPersona.get('email')?.value
+      person.correoElectronico = this.formularioPersona.get('correoElectronico')?.value
       this.pService.setPersonas(person).subscribe(res =>{
         this.getPersonas()
         this.formularioPersona.reset()
